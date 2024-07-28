@@ -1,0 +1,55 @@
+/* App.css */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-container {
+  background: url('https://img.freepik.com/free-photo/specks-light-blue_23-2147786012.jpg?ga=GA1.1.1971686175.1722104086&semt=ais_user') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh; 
+  color: white; 
+  padding:20px;
+  box-sizing: border-box;
+}
+
+footer {
+  background: url('https://img.freepik.com/free-photo/specks-light-blue_23-2147786012.jpg?ga=GA1.1.1971686175.1722104086&semt=ais_user') no-repeat center center fixed;
+  background-size: cover;
+  padding: 20px;
+  color: white; 
+  text-align: center; 
+}
+
+.footer-content {
+
+  color: white;
+  padding: 20px; 
+}
+
+.event-container {
+  background: url('https://img.freepik.com/free-photo/specks-light-blue_23-2147786012.jpg?ga=GA1.1.1971686175.1722104086&semt=ais_user') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh; 
+  color: white; 
+  padding: 20px;
+  box-sizing: border-box;
+}
+.background-image {
+  background: url('https://img.freepik.com/free-photo/specks-light-blue_23-2147786012.jpg?ga=GA1.1.1971686175.1722104086&semt=ais_user') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+

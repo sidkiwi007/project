@@ -1,0 +1,49 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  #root {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .home-container, .event-container{
+    position: relative;
+    flex: 1; 
+    background: url('https://img.freepik.com/free-vector/stage-spot-lights-rays-glowing-background_1017-31524.jpg?t=st=1722106382~exp=1722109982~hmac=abcd0b100762063b8eb56c2a6a07fd7cbebf101613c4b64bd106a58a79817aaa&w=740') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  
+  .home-content, .event-content {
+    text-align: center;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 80%;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  p {
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+  
+  footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    
+  }
+  
