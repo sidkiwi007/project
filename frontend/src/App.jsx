@@ -13,7 +13,7 @@ import './App.css';
 const sections = [
   { title: 'Home', url: '/home' },
   { title: 'Events', url: '/event' },
-  { title: 'Upcoming', url: '/upcoming' }, // Changed 'Details' to 'Upcoming'
+  { title: 'Upcoming', url: '/upcoming' }, 
 ];
 
 const App = () => {

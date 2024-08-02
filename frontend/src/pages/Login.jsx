@@ -98,13 +98,13 @@ export default function Login() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link href="#" variant="text">
                   Forgot password?
                 </Link>
               </Grid>
               <Grid item>
                 <Button onClick={() => navigate('/signup')} variant="text">
-                  {"Don't have an account? Sign Up"}
+                  {"Sign Up"}
                 </Button>
               </Grid>
             </Grid>

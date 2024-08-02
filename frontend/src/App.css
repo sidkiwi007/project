@@ -24,7 +24,7 @@ html, body {
 footer {
   background: url('https://img.freepik.com/free-photo/specks-light-blue_23-2147786012.jpg?ga=GA1.1.1971686175.1722104086&semt=ais_user') no-repeat center center fixed;
   background-size: cover;
-  padding: 20px;
+  padding: 10px;
   color: white; 
   text-align: center; 
 }
@@ -32,7 +32,7 @@ footer {
 .footer-content {
 
   color: white;
-  padding: 20px; 
+  padding: 10px; 
 }
 
 .event-container {
