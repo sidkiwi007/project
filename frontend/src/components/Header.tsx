@@ -4,12 +4,11 @@ import { AppBar, Toolbar, Typography, Button, Box, IconButton, Menu, MenuItem } 
 import AdbIcon from '@mui/icons-material/Adb';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
-
 const Header = ({ sections, title, isAuthenticated }) => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
-  const handleMenuClick = (event: React.MouseEvent<HTMLElement>) => {
+  const handleMenuClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -43,12 +42,12 @@ const Header = ({ sections, title, isAuthenticated }) => {
               key={section.title}
               component={Link}
               to={section.url}
-              sx={{ color: 'black' }}  
+              sx={{ color: 'black' }}
             >
               {section.title}
             </Button>
           ))}
-          {isAuthenticated && (
+          {isAuthenticated ? (
             <>
               <IconButton
                 onClick={handleMenuClick}
@@ -69,15 +68,23 @@ const Header = ({ sections, title, isAuthenticated }) => {
                 </MenuItem>
               </Menu>
             </>
-          )}
-          {!isAuthenticated && (
-            <Button
-              component={Link}
-              to="/login"
-              sx={{ color: 'black' }}  
-            >
-              Login
-            </Button>
+          ) : (
+            <>
+              <Button
+                component={Link}
+                to="/login"
+                sx={{ color: 'black' }}
+              >
+                Login
+              </Button>
+              <Button
+                component={Link}
+                to="/signup"
+                sx={{ color: 'black' }}
+              >
+                Sign Up
+              </Button>
+            </>
           )}
         </Box>
       </Toolbar>

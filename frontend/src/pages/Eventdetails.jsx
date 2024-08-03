@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import list from '../../public/list.json'; 
+import { getEventById } from '../../src/api'; 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -11,7 +11,32 @@ import '../../src/App.css';
 
 const Eventdetails = () => {
   const { id } = useParams();
-  const event = list.find((data) => data.id === id);
+  const [event, setEvent] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchEvent = async () => {
+      try {
+        const eventData = await getEventById(id);
+        setEvent(eventData);
+      } catch (error) {
+        setError('Event not found');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEvent();
+  }, [id]);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
 
   if (!event) {
     return <p>Event not found</p>;
@@ -38,7 +63,7 @@ const Eventdetails = () => {
                 {event.description}
               </Typography>
               <Typography variant="body1" color="text.secondary">
-                Date: {event.date}
+                Date: {new Date(event.date).toLocaleDateString()}
               </Typography>
               <Typography variant="body1" color="text.secondary">
                 Location: {event.location}

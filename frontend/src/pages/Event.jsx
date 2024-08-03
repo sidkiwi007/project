@@ -1,26 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import list from '../../public/list.json'; 
+import { getEvents } from '../../src/api'; 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Grid, Container } from '@mui/material';
-import '../../src/App.css'; 
+import '../../src/App.css';
 
 function Event() {
-  const filterData = list.filter((data) => data.name === 'event');
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const eventsData = await getEvents();
+        setEvents(eventsData);
+      } catch (error) {
+        console.error('Failed to fetch events:', error);
+      }
+    };
+
+    fetchEvents();
+  }, []);
 
   return (
-    <div className="event-container"> 
+    <div className="event-container">
       <Container>
         <h1>Events Provided</h1>
         <Grid container spacing={4}>
-          {filterData.length > 0 ? (
-            filterData.map((event, index) => (
+          {events.length > 0 ? (
+            events.map((event, index) => (
               <Grid item key={index} xs={12} sm={6} md={4}>
                 <Card>
-                  <Link to={`/event/${event.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <Link to={`/event/${event._id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                     <CardMedia
                       component="img"
                       height="300"
@@ -35,7 +48,7 @@ function Event() {
                         {event.description}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        Date: {event.date}
+                        Date: {new Date(event.date).toLocaleDateString()}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
                         Location: {event.location}

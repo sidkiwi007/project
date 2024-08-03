@@ -8,6 +8,8 @@ import Footer from './components/Footer';
 import Eventdetails from './pages/Eventdetails';
 import Upcoming from './pages/Upcoming';
 import Event from './pages/Event';
+import Profile from './pages/profile'; 
+import UserManagement from './UserManagement'; 
 import './App.css'; 
 
 const sections = [
@@ -30,6 +32,8 @@ const App = () => {
             <Route path="/event" element={<Event />} />
             <Route path="/event/:id" element={<Eventdetails />} /> 
             <Route path="/upcoming" element={<Upcoming />} />
+            <Route path="/profile" element={<Profile />} /> 
+            <Route path="/users" element={<UserManagement />} /> 
           </Routes>
         </main>
         <Footer title="Mosaic" description="For support or inquiries, please reach out to our team." />

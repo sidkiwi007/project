@@ -4,7 +4,7 @@ import '../../src/App.css';
 const Upcoming = () => {
   return (
     <div className="background-image">
-      <div className="home-content"> {/* or any class you use for content styling */}
+      <div className="home-content"> 
         <h1>Upcoming Events</h1>
       </div>
     </div>
